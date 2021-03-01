@@ -30,6 +30,7 @@ SECRET_KEY = env.str("DJANGO_SECRET_KEY", default='random-str')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DJANGO_DEBUG", False)
+# DEBUG = False
 
 ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=[])
 
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # third apps
     # self apps
+    'webstack.apps.WebstackConfig',
 ]
 
 MIDDLEWARE = [
@@ -83,11 +85,11 @@ WSGI_APPLICATION = 'django_base.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # },
-    'default': env.db(),
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    # 'default': env.db(),
 }
 
 

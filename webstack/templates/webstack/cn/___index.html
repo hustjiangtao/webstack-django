@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>category</h1>
+{#{{ categorys }}#}
+{{ categorys }}
+{% for category, childs in categorys.items %}
+  <p>{{ category }}, {{ childs }}</p>
+  <p>{{ category.id }}, {{ category.name }}, {{ category.website_set.all }}</p>
+  {% for site in category.website_set.all %}
+    <p>{{ site.name }}</p>
+    <p>{{ site.url }}</p>
+    <p><img src="{{ site.logo }}" alt="logo"></p>
+    <p>{{ site.desc }}</p>
+    <p>{{ site.create_time }}</p>
+  {% endfor %}
+  {% for child in childs %}
+    {{ child }}
+  {% endfor %}
+
+  <hr>
+
+{% endfor %}
+
+</body>
+</html>

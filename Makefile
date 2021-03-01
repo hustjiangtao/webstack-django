@@ -7,5 +7,5 @@ dev:
 test:
 	.venv/bin/python manage.py test
 
-fetch_loop:
-	.venv/bin/python -m crawlers.run_loop
+migrate:
+	.venv/bin/python manage.py migrate

@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/*
+data/*
+video/*
+video/favorite/*
+douyin
+.vscode/*
+common/__pycache__
+tmp/face/*
+
+!data/README.md
+!video/README.md
+!video/favorite/
+!video/favorite/README.md
